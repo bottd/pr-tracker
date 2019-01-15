@@ -1,7 +1,4 @@
-const chai = require('chai');
-const utils = require('../utils/utils');
-
-const expect = chai.expect;
+const utils = require('../utils');
 
 describe('utils', () => {
   describe('parseLinks', () => {
@@ -11,7 +8,7 @@ describe('utils', () => {
       };
       const links = '<https://api.github.com>; rel="test"';
       const result = utils.parseLinks(links);
-      expect(result).to.deep.equal(expected);
+      expect(result).toEqual(expected);
     });
     it('Should work with multiple links', () => {
       const expected = {
@@ -23,7 +20,7 @@ describe('utils', () => {
       const links =
         '<https://api.github.com/repositories/10270250/pulls?state=open&page=2>; rel="next", <https://api.github.com/repositories/10270250/pulls?state=open&page=5>; rel="last"';
       const result = utils.parseLinks(links);
-      expect(result).to.deep.equal(expected);
+      expect(result).toEqual(expected);
     });
   });
 });
