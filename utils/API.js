@@ -14,4 +14,4 @@ async function getData(url) {
   return response.json();
 }
 
-module.exports = { getPulls, getData };
+module.exports = { getData, getPulls };
