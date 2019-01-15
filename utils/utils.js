@@ -23,8 +23,8 @@ function cleanPulls(pulls) {
     const comments = await getData(pull.comments_url);
     return {
       author: pull.user.login,
-      commit_count: commits.length || 0,
-      comment_count: comments.length || 0,
+      commit_count: commits.length,
+      comment_count: comments.length,
       title: pull.title,
     };
   });
