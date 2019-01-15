@@ -41,4 +41,4 @@ async function getData(url) {
   return response.json();
 }
 
-module.exports = { fetchPulls, fetchAllPulls };
+module.exports = { cleanPulls, fetchPulls, fetchAllPulls, getData };
