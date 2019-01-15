@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const utils = require('./utils/utils');
+const utils = require('./utils');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -18,3 +18,5 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
+
+module.exports = app;

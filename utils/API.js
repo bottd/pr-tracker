@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const utils = require('./utils');
+const utils = require('./');
 const token = process.env.TOKEN;
 
 async function getPulls(url) {

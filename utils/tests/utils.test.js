@@ -1,4 +1,4 @@
-const utils = require('../utils');
+const utils = require('../');
 const API = require('../API');
 
 const token = process.env.TOKEN;
