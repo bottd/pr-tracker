@@ -21,13 +21,16 @@ const mockPulls = [
 ];
 
 const getPulls = jest
-  .fn()
+  .fn(() => ({
+    links: '<https://example.com/repo?page=2>; rel="last"',
+    pulls: mockPulls,
+  }))
   .mockImplementationOnce(() => ({
     links: mockLinks,
     pulls: mockPulls,
   }))
   .mockImplementationOnce(() => ({
-    links: null,
+    links: '<https://example.com/repo?page=2>; rel="last"',
     pulls: mockPulls,
   }));
 
