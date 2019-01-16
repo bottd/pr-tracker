@@ -26,7 +26,10 @@ class RepoForm extends Component {
     const { owner, repo } = this.state;
     return (
       <form className="RepoForm" onSubmit={this.handleSubmit}>
-        <h1>PR Tracker</h1>
+        <h1 className="RepoForm-title">
+          <span className="title-color">PR </span>Tracker
+        </h1>
+        <p>View open PRs for a GitHub repo</p>
         <input
           name="owner"
           placeholder="Owner"
