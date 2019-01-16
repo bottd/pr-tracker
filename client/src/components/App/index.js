@@ -19,14 +19,9 @@ class App extends Component {
   };
 
   getPulls = async (owner, repo) => {
-    const storedData = JSON.parse(localStorage.getItem(`${owner}/${repo}`));
-    if (storedData) {
-      return this.setState({ pulls: storedData, loading: false });
-    }
     try {
       const response = await fetch(`/api/${owner}/${repo}`);
       const pulls = await response.json();
-      localStorage.setItem(`${owner}/${repo}`, JSON.stringify(pulls));
       this.setState({ loading: false, pulls });
     } catch (error) {
       console.log(error.message);
