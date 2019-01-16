@@ -4,11 +4,15 @@
   margin: 10px 2% 10px 2%;
   position: relative;
   height: 10%;
-  width: 100%;
+  width: 95%;
 }
 
 .PullRequest-header, .author-name {
   text-align: left;
+}
+
+.PullRequest-info {
+  width: 100%;
 }
 
 .author-img {
@@ -20,8 +24,19 @@
   width: 100px;
 }
 
-.author-name {
-  display: block;
+.PullRequest-stats {
+  width: 100%;
+  display: flex;
+}
+
+.author-name, .stats {
+  margin: 0;
+  width: 50%;
+}
+
+.stats {
+  text-align: right;
+  margin-right: 1%;
 }
 
 .pr-link {
