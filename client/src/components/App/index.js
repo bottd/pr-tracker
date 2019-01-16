@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Loading from '../Loading';
 import RepoForm from '../RepoForm';
 import PullContainer from '../PullContainer';
 
@@ -33,7 +34,11 @@ class App extends Component {
     return (
       <div className="App">
         <RepoForm handleRequest={this.handleRequest} />
-        <PullContainer pulls={this.state.pulls} />
+        {this.state.loading ? (
+          <Loading />
+        ) : (
+          <PullContainer pulls={this.state.pulls} />
+        )}
       </div>
     );
   }
