@@ -24,9 +24,9 @@ export default function PullRequest(props) {
           <p className="author-name">{author}</p>
           <p className="stats">
             <i className="fas fa-comment-alt" />
-            {` ${comment_count} `}
+            {` ${comment_count || 0} `}
             <i className="fas fa-keyboard" />
-            {` ${commit_count}`}
+            {` ${commit_count || 0}`}
           </p>
         </div>
       </div>
