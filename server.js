@@ -10,7 +10,7 @@ app.get('/api/:owner/:repo', async (req, res) => {
   const { owner, repo } = req.params;
   const data = await utils.fetchAllPulls(owner, repo);
   const cleaned = await utils.cleanPulls(data);
-  res.status(200).json({ owner, repo, data: cleaned });
+  res.status(200).json(cleaned);
 });
 
 app.use(express.static(path.join(__dirname, 'client/build')));
