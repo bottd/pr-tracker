@@ -23,8 +23,12 @@ function cleanPulls(pulls) {
     const comments = await getData(pull.comments_url);
     return {
       author: pull.user.login,
+      author_img: pull.user.avatar_url,
       commit_count: commits.length,
       comment_count: comments.length,
+      id: pull.id,
+      link: pull.html_url,
+      number: pull.number,
       title: pull.title,
     };
   });
