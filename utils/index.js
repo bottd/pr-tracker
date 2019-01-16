@@ -7,7 +7,10 @@ async function fetchAllPulls(owner, repo) {
   let allPulls = [];
   const url = `https://api.github.com/repos/${owner}/${repo}/pulls?state=open&access_token=${token}`;
   let pageOfPulls = await getPulls(url);
-  let links = parseLinks(pageOfPulls.links);
+  let links = {};
+  if (pageOfPulls.links) {
+    links = parseLinks(pageOfPulls.links);
+  }
   allPulls.push(...pageOfPulls.pulls);
   while (links.next) {
     pageOfPulls = await getPulls(links.next);
