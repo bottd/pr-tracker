@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   handleRequest = async (owner, repo) => {
-    await this.setState({ loading: true });
+    await this.setState({ loading: true, pulls: [] });
     this.getPulls(owner, repo);
   };
 
