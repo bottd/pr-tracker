@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils fetchAllPulls Should return all pulls in one array 1`] = `
+Array [
+  Object {
+    "comments_url": "example.com/comments/1",
+    "commits_url": "example.com/commits/1",
+    "extraKey": "Should be thrown out",
+    "title": "A Pull Request",
+    "user": Object {
+      "login": "bottd",
+    },
+  },
+  Object {
+    "comments_url": "example.com/comments/2",
+    "commits_url": "example.com/commits/2",
+    "extraKey": "Should be thrown out",
+    "title": "Another Pull Request",
+    "user": Object {
+      "login": "bottd",
+    },
+  },
+]
+`;

@@ -1,0 +1,49 @@
+.PullRequest {
+  border: 1px solid #C6C7C4;
+  display: flex;
+  margin: 10px 2% 10px 2%;
+  position: relative;
+  height: 10%;
+  width: 95%;
+}
+
+.PullRequest-header, .author-name {
+  text-align: left;
+}
+
+.PullRequest-info {
+  width: 100%;
+}
+
+.author-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100px;
+  margin-right: 1%;
+  width: 100px;
+}
+
+.PullRequest-stats {
+  width: 100%;
+  display: flex;
+}
+
+.author-name, .stats {
+  margin: 0;
+  width: 50%;
+}
+
+.stats {
+  text-align: right;
+  margin-right: 1%;
+}
+
+.pr-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
