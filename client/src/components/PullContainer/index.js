@@ -11,7 +11,7 @@ export default function PullsContainer(props) {
       <div className="PullContainer">
         <h2>
           There's nothing here! The selected repository may not exist, or have
-          no open pull requests.
+          no open pull requests.  Please enter a repository Owner and Name above.
         </h2>
       </div>
     );
