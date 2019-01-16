@@ -23,7 +23,7 @@ const mockPulls = [
     title: 'Another Pull Request',
     extraKey: 'Should be thrown out',
   },
-]
+];
 
 describe('utils', () => {
   beforeEach(() => {
@@ -32,15 +32,26 @@ describe('utils', () => {
   describe('fetchAllPulls', () => {
     it('Should call getPulls with the base url and next urls', async () => {
       const expected = `https://api.github.com/repos/bottd/pr-tracker/pulls?state=open&access_token=${token}`;
-      const expectedNext = 'https://example.com/repo?page=2'
+      const expectedNext = 'https://example.com/repo?page=2';
       await utils.fetchAllPulls('bottd', 'pr-tracker');
       expect(API.getPulls).toHaveBeenCalledWith(expected);
       expect(API.getPulls).toHaveBeenCalledWith(expectedNext);
-
     });
     it('Should return all pulls in one array', async () => {
       const results = await utils.fetchAllPulls('bottd', 'pr-tracker');
       expect(results).toMatchSnapshot();
+    });
+    it('Should only call parseLinks when links header exists', async () => {
+      const spy = jest.spyOn(utils, 'parseLinks');
+      API.getPulls.mockImplementation(() => {
+        return {
+          links: null,
+          pulls: [],
+        };
+      });
+      await utils.fetchAllPulls('bottd', 'pr-tracker');
+      API.getPulls.mockRestore();
+      expect(spy).not.toHaveBeenCalled();
     });
   });
   describe('cleanPulls', () => {
