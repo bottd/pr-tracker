@@ -43,6 +43,11 @@ describe('Server', () => {
         const result = await request(app).get('/api/bottd/pr-tracker');
         expect(result.body).toEqual(expected);
       });
+      it('Should return a status 500 on server errors', async () => {
+        utils.fetchAllPulls.mockImplementation(() => Promise.reject('Server error'));
+        const result = await request(app).get('/api/bottd/pr-tracker');
+        expect(result.status).toBe(500);
+      });
     });
   });
 });
