@@ -12,10 +12,13 @@ To set up the server locally follow these steps:
 This project requires node to be installed.
 
 `$ git clone https://github.com/bottd/pr-tracker && cd pr-tracker`
+
 `$ npm install`
+
 `$ npm run build-client`
 
 You must also create a .env file and generate a GitHub API Token, set it's value in the .env as
+
 `TOKEN=#YOUR TOKEN HERE#`
 
 ### Running the server
