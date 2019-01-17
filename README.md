@@ -15,6 +15,9 @@ This project requires node to be installed.
 `$ npm install`
 `$ npm run build-client`
 
+You must also create a .env file and generate a GitHub API Token, set it's value in the .env as
+`TOKEN=#YOUR TOKEN HERE#`
+
 ### Running the server
 
 The server can be run with
